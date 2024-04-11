@@ -91,7 +91,7 @@ public class Lista {
 
 8. L1.insertarUlt(L2) : Método que insertar los elementos de la lista L2 al final de la lista L1.
 
-9. L1.iguales() : Método Lógico que devuelve True, si todos los elementos de la lista L1 son iguales.
+9. L1.iguales() : Método Lógico que devuelve True, si todos los elementos de la lista L1 son iguales.@
 
 10. L1.diferentes() : Método Lógico que devuelve True, si todos los elementos de la lista L1 son diferentes.
 
