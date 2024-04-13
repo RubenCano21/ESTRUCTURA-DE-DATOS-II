@@ -1,3 +1,5 @@
+package ListaDoble;
+
 public class Lista {
 
     public Nodo prim;
@@ -81,9 +83,9 @@ public class Lista {
 
 3. L1.insertarUlt(x) : Método que inserta el elemento x, al final de la lista L1.*/
 
-//4. L1.insertarLugarAsc(x) : Método que inserta el elemento x, en su lugar correspondiente en la Lista ordenadas de menor a mayor.
+//4. L1.insertarLugarAsc(x) : Método que inserta el elemento x, en su lugar correspondiente en la ListaDoble.Lista ordenadas de menor a mayor.
 
-/*5. L1.insertarLugarDes(x) : Método que inserta el elemento x, en su lugar correspondiente en la Lista ordenadas de mayor a menor.
+/*5. L1.insertarLugarDes(x) : Método que inserta el elemento x, en su lugar correspondiente en la ListaDoble.Lista ordenadas de mayor a menor.
 
 6. L1.insertarIesimo(L2, i) : Método que insertar los elementos de la lista L2 en la lista L1, desde la posición i.
 
