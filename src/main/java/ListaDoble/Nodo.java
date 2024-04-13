@@ -1,3 +1,5 @@
+package ListaDoble;
+
 public class Nodo {
     public Nodo ant;
     public int elem;
