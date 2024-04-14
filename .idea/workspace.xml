@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="Actualizando nuevos metodos y clases sobre ListaS">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="Nuevos metodos de listas simples implemetadas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ListaDoble/ListaD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestListaD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListaSimple/ListaS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/ListaS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListaSimple/NodoS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/NodoS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestListaS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestListaS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +35,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d454cbe9-f767-4d86-8977-148e7aebeef2" />
+        <option name="url" value="https://github.com/RubenCano21/ESTRUCTURA-DE-DATOS-II.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -52,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.TestListaD.executor": "Run",
     "Application.TestListaS.executor": "Run",
     "Application.TestListaV.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -68,7 +77,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.TestListaS">
+  <component name="RunManager" selected="Application.TestListaD">
+    <configuration name="TestListaD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestListaD" />
+      <module name="ListasDoblesEnlace" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestListaS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestListaS" />
       <module name="ListasDoblesEnlace" />
@@ -85,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestListaD" />
         <item itemvalue="Application.TestListaS" />
         <item itemvalue="Application.TestListaV" />
       </list>
@@ -106,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712866481673</updated>
       <workItem from="1712866482784" duration="1902000" />
-      <workItem from="1713017084369" duration="24190000" />
+      <workItem from="1713017084369" duration="35581000" />
     </task>
     <task id="LOCAL-00001" summary="Actualizando nuevos metodos y clases sobre ListaS">
       <option name="closed" value="true" />
@@ -124,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713025100505</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Nuevos metodos de listas simples implemetadas">
+      <option name="closed" value="true" />
+      <created>1713061092338</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713061092338</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Actualizando nuevos metodos y clases sobre ListaS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizando nuevos metodos y clases sobre ListaS" />
+    <MESSAGE value="Nuevos metodos de listas simples implemetadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nuevos metodos de listas simples implemetadas" />
   </component>
 </project>

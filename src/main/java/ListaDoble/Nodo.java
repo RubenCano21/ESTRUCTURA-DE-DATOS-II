@@ -10,4 +10,10 @@ public class Nodo {
         this.elem = x;
         this.prox = prox;
     }
+
+    public Nodo(int elem) {
+        this.elem = elem;
+        this.ant = null;
+        this.prox = null;
+    }
 }
