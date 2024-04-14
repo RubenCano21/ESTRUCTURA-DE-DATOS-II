@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/ListaS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/NodoS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ListasVectores/ListaV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestListaS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestListaV.java" afterDir="false" />
+    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="Actualizando nuevos metodos y clases sobre ListaS">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaDoble/Lista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaDoble/Nodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListaSimple/ListaS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/ListaS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListaSimple/NodoS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaSimple/NodoS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestListaS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestListaS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +56,7 @@
     "Application.TestListaV.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "v1",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -106,8 +106,25 @@
       <option name="presentableId" value="Default" />
       <updated>1712866481673</updated>
       <workItem from="1712866482784" duration="1902000" />
-      <workItem from="1713017084369" duration="7733000" />
+      <workItem from="1713017084369" duration="24190000" />
     </task>
+    <task id="LOCAL-00001" summary="Actualizando nuevos metodos y clases sobre ListaS">
+      <option name="closed" value="true" />
+      <created>1713025060738</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713025060738</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Actualizando nuevos metodos y clases sobre ListaS">
+      <option name="closed" value="true" />
+      <created>1713025100505</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713025100505</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,5 +140,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Actualizando nuevos metodos y clases sobre ListaS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizando nuevos metodos y clases sobre ListaS" />
   </component>
 </project>

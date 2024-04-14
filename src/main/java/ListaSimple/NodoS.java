@@ -9,4 +9,9 @@ public class NodoS {
         this.elem = elem;
         this.prox = prox;
     }
+
+    public NodoS(int elem) {
+        this.elem = elem;
+        this.prox = null;
+    }
 }
