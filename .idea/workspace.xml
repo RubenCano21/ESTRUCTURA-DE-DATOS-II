@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="Nuevos metodos de listas simples implemetadas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ListaDoble/ListaD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestListaD.java" afterDir="false" />
+    <list default="true" id="8936073e-2dae-4a2e-adf7-7e13803ef6dd" name="Changes" comment="Practica de examen">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_4_2024_12_20_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_4_2024_12_20__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListaDoble/ListaD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaDoble/ListaD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestListaD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestListaD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +37,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -58,25 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestListaD.executor": "Run",
-    "Application.TestListaS.executor": "Run",
-    "Application.TestListaV.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "v1",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TestListaD.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestListaS.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestListaV.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.TestListaD">
     <configuration name="TestListaD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestListaD" />
@@ -123,7 +125,8 @@
       <option name="presentableId" value="Default" />
       <updated>1712866481673</updated>
       <workItem from="1712866482784" duration="1902000" />
-      <workItem from="1713017084369" duration="35581000" />
+      <workItem from="1713017084369" duration="36011000" />
+      <workItem from="1713139556663" duration="4413000" />
     </task>
     <task id="LOCAL-00001" summary="Actualizando nuevos metodos y clases sobre ListaS">
       <option name="closed" value="true" />
@@ -149,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713061092338</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Practica de examen">
+      <option name="closed" value="true" />
+      <created>1713074032103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713074032104</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +180,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Actualizando nuevos metodos y clases sobre ListaS" />
     <MESSAGE value="Nuevos metodos de listas simples implemetadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuevos metodos de listas simples implemetadas" />
+    <MESSAGE value="Practica de examen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Practica de examen" />
   </component>
 </project>
