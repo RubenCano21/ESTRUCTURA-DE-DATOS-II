@@ -388,55 +388,298 @@ public class ListaD {
         return true;
     }
     // 24.   L1.frecuencia(x) : Método que devuelve la cantidad de veces que aparece el elemento x en la lista L1.
-    //
-    // 25.   L1.existeFrec(k) : Método Lógico que devuelve True, si existe algún elemento que se repite exactamente k-veces en la lista L1.
-    //
+    public int frecuencia(int x){
+        int k =0;
+        Nodo p = prim;
+        while ( p != null){
+            if (p.elem == x)
+                k++;
+            p = p.prox;
+        }
+        return k;
+    }
+    // 25.   L1.existeFrec(k) : Método Lógico que devuelve True, si existe algún elemento que se repite exactamente
+    // k-veces en la lista L1.
+    public boolean existeFrec(int k){
+        int c = 0;
+        Nodo p = prim;
+        while (p != null){
+            if (frecuencia(p.elem) == k)
+                return true;
+            p = p.prox;
+        }
+        return false;
+    }
     // 26.   L1.mismasFrec() : Método Lógico que devuelve True, si los elementos de la lista L1 tienen la misma frecuencia.
-    //
-    // 27.   L1.poker() : Método Lógico que devuelve True, si los elementos de la lista L1 forman poker. (Todos los elementos son iguales excepto uno)
-    //
+    public boolean mismaFrec(){
+        Nodo p = prim;
+        while (p != null){
+            if (frecuencia(p.elem) == frecuencia(p.prox.elem))
+                return true;
+            p = p.prox;
+        }
+        return false;
+    }
+    // 27.   L1.poker() : Método Lógico que devuelve True, si los elementos de la lista L1 forman poker.
+    // (Todos los elementos son iguales excepto uno)
+    public  boolean poker(){
+        Nodo p = prim;
+        while (p != null){
+            if (frecuencia(p.elem) == cantElem-1)
+                return true;
+            p =p.prox;
+        }
+        return false;
+    }
     // 28.   L1.existePar() : Método lógico que devuelve True, si la lista L1 contiene al menos un elemento par.
-    //
+    public boolean existePar(){
+        Nodo p = prim;
+        while (p != null){
+            if (esPar(p.elem))
+                return true;
+            p =p.prox;
+        }
+        return false;
+    }
+
+    private boolean esPar(int x) {
+        return (x % 2 == 0);
+    }
     // 29.   L1.existeImpar() : Método lógico que devuelve True, si la lista L1 contiene al menos un elemento impar.
-    //
+    public boolean existeImpar(){
+        Nodo p =prim;
+        while (p != null){
+            if (esImpar(p.elem))
+                return true;
+            p = p.prox;
+        }
+        return false;
+    }
+
+    private boolean esImpar(int x) {
+        return (x % 2 == 1);
+    }
     // 30.   L1.todoPares() : Método lógico que devuelve True, si todos los elementos de la lista L1 son pares.
-    //
+    public boolean todosPares(){
+        Nodo p = prim;
+        while (p != null){
+            if (!esPar(p.elem))
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
     // 31.   L1.todoImpares() : Método lógico que devuelve True, si todos los elementos de la lista L1 son impares.
-    //
-    // 32.   L1.existeParImpar() : Método lógico que devuelve True, si en la lista L1 al menos existe un elemento par y un elemento impar.
-    //
-    // 33.   L1.alternos() : Método lógico que devuelve true, si la lista L1 contiene elementos en la prox secuencia: par, impar, par, impar, . . . or  impar, par, impar, par, . . . .
-    //
-    // 34.   L1.palindrome() : Método lógico que devuelve True, si la lista L1 contiene elementos que forma un palíndrome. Ejemplo, caso anterior.
-    //
+    public boolean todosImpares(){
+        Nodo p = prim;
+        while (p != null){
+            if (!esImpar(p.elem))
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
+    //32.   L1.existeParImpar() : Método lógico que devuelve True, si en la lista L1 al menos existe un elemento par y
+    // un elemento impar.
+    public boolean existeParImpar(){
+        Nodo p = prim;
+        while (p != null){
+            if (existePar() && existeImpar())
+                return true;
+            p = p.prox;
+        }
+        return false;
+    }
+    // 33.   L1.alternos() : Método lógico que devuelve true, si la lista L1 contiene elementos en la prox secuencia:
+    // par, impar, par, impar, . . . or  impar, par, impar, par, . . . .
+    public boolean alternos (){
+        Nodo p= prim;
+        while (p != null && p.prox != null){
+            if (esPar(p.elem) && esPar(p.prox.elem) ||
+                    esImpar(p.elem) && esImpar(p.prox.elem))
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
+    // 34.   L1.palindrome() : Método lógico que devuelve True, si la lista L1 contiene elementos que forma un palíndrome.
+    // Ejemplo, caso anterior.
+    public boolean palindrome() {
+        if (prim == null) {
+            return false;
+        }
+        Nodo p = prim;
+        Nodo q = prim;
+        while (q.prox != null) {
+            q = q.prox;
+        }
+        while (p != q && p.ant != q) {
+            if (p.elem != q.elem) {
+                return false;
+            }
+            p = p.prox;
+            q = q.ant;
+        }
+        return true;
+    }
     // 35. L1.invertir() : Método que invierte los elementos de la lista L1.
-    //
-    //
-    //
-    // ELIMINAR LOS ELEMENTOS DE UNA LISTA
-    //
+    public void invertir() {
+        Nodo p = prim;
+        Nodo ap = null;
+        while (p != null) {
+            ap = p.ant;
+            p.ant = p.prox;
+            p.prox = ap;
+            p = p.ant;
+        }
+        if (ap != null) {
+            prim = ap.ant;
+        }
+    }
+
+
+    //          ELIMINAR LOS ELEMENTOS DE UNA LISTA
+
     // 1. L1.eliminarPrim() : Método que elimina el primer elemento de la lista L1.
-    //
+    public  void eliminarPrim(){
+        if (vacia())
+            return;
+        if (prim == ult)
+            prim = ult = null;
+        else {
+            prim.prox.ant = null;
+            prim = prim.prox;
+        }
+        cantElem--;
+    }
     // 2. L1.eliminarUlt() : Método que elimina el último elemento de la lista L1.
-    //
+    public void eliminarUlt(){
+        if (vacia())
+            return;
+        if (prim == ult)
+            prim = ult = null;
+        else {
+            ult.ant.prox = null;
+            ult = ult.ant;
+        }
+        cantElem--;
+    }
     // 3. L1.eliminarIesimo(i) : Método que elimina el i-ésimo elemento de la lista L1.
-    //
+    public void eliminarIesimo(int i){
+        int k = 0;
+        Nodo p = prim, ap = null;
+        while (k < i && p != null){
+            ap = p;
+            p = p.prox;
+            k++;
+        }
+        eliminarNodo(ap,p);
+    }
+
+    private Nodo eliminarNodo(Nodo ap, Nodo p) {
+        if (p == null)
+            return null;
+
+        if (ap == null){
+            eliminarPrim();
+            return prim;
+        }
+        if (p.prox == null){
+            eliminarUlt();
+            return null;
+        }
+        ap.prox = p.prox;
+        p.prox.ant = ap;
+        cantElem--;
+        return ap.prox;
+    }
     // 4. L1.eliminarPrim(x) : Método que elimina el primer elemento x de la lista L1.
-    //
+
     // 5. L1.eliminarUlt(x) : Método que elimina el último elemento x de la lista L1.
-    //
+
+
     // 6. L1.eliminarTodo( x ) : Método que elimina todos los elementos x de la lista L1.
-    //
+    public void eliminarTodo(int x){
+        Nodo p = prim, ap=null;
+        while(p != null){
+            if(p.elem == x){
+                ap.prox = eliminarNodo(ap, p);
+                p = p.prox;
+            }else {
+                ap =p;
+                p = p.prox;
+            }
+        }
+    }
+
     // 7. L1.eliminarPrim( n ) : Método que eliminar los primeros n-elementos de la lista L1.
-    //
+    public void eliminarPrim(int n){
+        if(vacia())
+            return;
+        if (cantElem == 1) {
+            eliminarUlt();
+        }
+        int k =1;
+        Nodo p = prim;
+        while (k <= n && p!= null) {
+            eliminarPrim();
+            p = p.prox;
+            k++;
+        }
+    }
     // 8. L1.eliminarUlt( n ) : Método que elimina los n-últimos elementos de la lista L1.
-    //
+    public void eliminarUlt(int n){
+        if(vacia())
+            return;
+        if (cantElem == 1) {
+            eliminarUlt();
+        }
+        int k =1;
+        Nodo p = prim;
+        while (k <= n && p!= null) {
+            eliminarUlt();
+            p = p.prox;
+            k++;
+        }
+    }
     // 9. L1.eliminarIesimo(i, n) : Método que elimina los n-elementos de la lista L1, desde la posición i.
-    //
+    public void eliminarIesimo(int i, int n){
+        int k =0;
+        Nodo p = prim, ap = null;
+        while (i > k && p != null){
+            ap = p;
+            p = p.prox;
+            k++;
+        }
+        for (int j = 1; j <= n ; j++) {
+            ap.prox = eliminarNodo(ap, p);
+            p = p.prox;
+        }
+    }
     // 10. L1.eliminarExtremos( n ) : Método que eliminar la n-elementos de los extremos de la lista L1.
-    //
+    public void eliminarExtremos(int n){
+        int k = 0;
+        Nodo p = prim;
+        while (k < n && p != null){
+            eliminarPrim();
+            eliminarUlt();
+            p = p.prox;
+            k++;
+        }
+    }
     // 11. L1.eliminarPares() : Método que elimina los elementos pares de la lista L1.
-    //
+    public void eliminarPares(){
+        Nodo p = prim, ap = null;
+        while (p != null){
+            if (esPar(p.elem)){
+                ap.prox = eliminarNodo(ap,p);
+                p = p.prox;
+            }else {
+                ap = p;
+                p = p.prox;
+            }
+        }
+    }
     // 12.L1.eliminarUnicos() : Método que elimina los elementos que aparecen solo una vez en la lista L1.
     //
     // 13 L1.eliminarTodo(L2) : Método que elimina todos los elementos de la lista L1, que aparecen en la lista L2.
