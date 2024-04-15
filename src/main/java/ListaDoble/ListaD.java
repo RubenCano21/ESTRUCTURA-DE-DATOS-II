@@ -231,29 +231,162 @@ public class ListaD {
         }
     }
     // 12. L1.merge(L2, L3): Método que realiza el merge en L1, de las listas ordenadas en forma ascedente L2 y L3.
-    //
+    public void merge(ListaD L2, ListaD L3) {
+        if (L2 == null || L2.prim == null) {
+            prim = L3.prim;
+            return;
+        }
+        if (L3 == null || L3.prim == null) {
+            prim = L2.prim;
+            return;
+        }
+        Nodo p = L2.prim;
+        Nodo q = L3.prim;
+        // Crear un nuevo nodo que represente la prim de la lista L1
+        prim = new Nodo(0);
+        Nodo temp = prim;
+        while (p != null && q != null) {
+            if (p.elem <= q.elem) {
+                temp.prox = p;
+                p = p.prox;
+            } else {
+                temp.prox = q;
+                q = q.prox;
+            }
+            temp = temp.prox;
+        }
+        // Agregar los elementos restantes de L2 o L3 al final de L1
+        if (p != null) {
+            temp.prox = p;
+        }
+        if (q != null) {
+            temp.prox = q;
+        }
+        prim = prim.prox; // Descartar el nodo ficticio al principio
+    }
     // 13.   L1.iguales() : Método Lógico que devuelve True, si todos los elementos de la lista L1 son iguales.
-    //
+    public boolean iguales(){
+        Nodo p = prim;
+        int aux = prim.elem;
+        while (p != null){
+            if (p.elem != aux)
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
     // 14.   L1.diferentes() : Método Lógico que devuelve True, si todos los elementos de la lista L1 son diferentes.
-    //
+    public boolean diferentes(){
+        Nodo p = prim, ap = null;
+        while (p != null && p.prox != null){
+            ap = p;
+            p = p.prox;
+            if (ap.elem == p.elem)
+                return false;
+        }
+        return true;
+    }
     // 15.   L1.mayorElem() : Método que devuelve el mayor elemento de la lista L1.
-    //
-    // 16.    L1.menorElem() : Método que devuelve el mayor elemento de la lista L1.
-    //
+    public int mayorElem(){
+        Nodo p = prim;
+        int may = prim.elem;
+        while (p != null){
+            if (p.elem >= may)
+                may = p.elem;
+            p = p.prox;
+        }
+        return may;
+    }
+    // 16.    L1.menorElem() : Método que devuelve el menor elemento de la lista L1.
+    public int menorElem(){
+        Nodo p = prim;
+        int men = prim.elem;
+        while (p != null){
+            if (p.elem <= men)
+                men = p.elem;
+            p = p.prox;
+        }
+        return men;
+    }
     // 17.    L1.ordenado()  : Método Lógico que devuelve True, si todos los elementos de la lista L1 están ordenados en forma ascendente o descendente.
+    public boolean ordenado(){
+        return ordenadoAsc() || ordenadoDesc();
+    }
+
+    private boolean ordenadoDesc() {
+        Nodo p = prim;
+        while (p != null && p.prox != null){
+            if (p.elem <= p.prox.elem)
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
+
+    private boolean ordenadoAsc() {
+        Nodo p = prim;
+        while (p != null && p.prox != null){
+            if (p.elem >= p.prox.elem)
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
+    // 18.   L1.indexOf(x) : Método que devuelve la posición de la primera ocurrencia del elemento x. Si x no se encuentra en
+    // la lista L1, el método devuelve –1.
+    public int indexOf(int x) {
+        Nodo p = prim;
+        int k = 0;
+        while (p != null) {
+            if (p.elem == x) {
+                return k;
+            }
+            p = p.prox;
+            k++;
+        }
+        return -1;
+    }
+    // 19.   L1.indexOf(x, i) : Método que devuelve la posición de la primera ocurrencia del elemento x,
+    // la búsqueda se realiza desde la posición i.
     //
-    // 18.   L1.indexOf(x) : Método que devuelve la posición de la primera ocurrencia del elemento x. Si x no se encuentra en la lista L1, el método devuelve –1.
-    //
-    // 19.   L1.indexOf(x, i) : Método que devuelve la posición de la primera ocurrencia del elemento x, la búsqueda se realiza desde la posición i.
-    //
-    // 20.   L1.lastIndexOf(x) : Método que devuelve la posición de la última ocurrencia del elemento x. Si x no se encuentra en la lista L1, el método devuelve –1.
-    //
-    // 21.   L1.lastIndexOf(x, i) : Método que devuelve la posición de la última ocurrencia del elemento x. Si x no se encuentra en la lista L1, el método devuelve –1. La búsqueda se realiza desde la posición i.
+    // 20.   L1.lastIndexOf(x) : Método que devuelve la posición de la última ocurrencia del elemento x.
+    // Si x no se encuentra en la lista L1, el método devuelve –1.
+    public int lastIndexOf(int x) {
+        Nodo p = ult;
+        int k = cantElem - 1;
+        while (p != null) {
+            if (p.elem == x) {
+                return k;
+            }
+            p = p.ant;
+            k--;
+        }
+        return -1;
+    }
+    // 21.   L1.lastIndexOf(x, i) : Método que devuelve la posición de la última ocurrencia del elemento x.
+    // Si x no se encuentra en la lista L1, el método devuelve –1. La búsqueda se realiza desde la posición i.
     //
     // 22.   L1.reemplazar(x, y) : Método que reemplaza todas las ocurrencias del elemento x por el elemento y en la lista L1.
-    //
+    public void reemplazar (int x, int y){
+        Nodo p = prim;
+        int k =0;
+        while (p != null){
+            if (p.elem == x){
+                p.elem = y;
+            }
+            p = p.prox;
+        }
+    }
     // 23.   L1.seEncuentra(x) : Método Lógico que devuelve True, si el elemento x, se encuentra en la lista L1.
-    //
+    public boolean seEncuentra(int x){
+        Nodo p = prim;
+        while (p != null){
+            if (p.elem != x)
+                return false;
+            p = p.prox;
+        }
+        return true;
+    }
     // 24.   L1.frecuencia(x) : Método que devuelve la cantidad de veces que aparece el elemento x en la lista L1.
     //
     // 25.   L1.existeFrec(k) : Método Lógico que devuelve True, si existe algún elemento que se repite exactamente k-veces en la lista L1.
@@ -272,7 +405,7 @@ public class ListaD {
     //
     // 32.   L1.existeParImpar() : Método lógico que devuelve True, si en la lista L1 al menos existe un elemento par y un elemento impar.
     //
-    // 33.   L1.alternos() : Método lógico que devuelve true, si la lista L1 contiene elementos en la siguiente secuencia: par, impar, par, impar, . . . or  impar, par, impar, par, . . . .
+    // 33.   L1.alternos() : Método lógico que devuelve true, si la lista L1 contiene elementos en la prox secuencia: par, impar, par, impar, . . . or  impar, par, impar, par, . . . .
     //
     // 34.   L1.palindrome() : Método lógico que devuelve True, si la lista L1 contiene elementos que forma un palíndrome. Ejemplo, caso anterior.
     //
