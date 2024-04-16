@@ -348,7 +348,31 @@ public class ListaD {
     }
     // 19.   L1.indexOf(x, i) : Método que devuelve la posición de la primera ocurrencia del elemento x,
     // la búsqueda se realiza desde la posición i.
-    //
+    public int indexOf(int x, int i) {
+        if (prim == null || i < 0) {
+            // La lista está vacía o la posición inicial es negativa
+            return -1;
+        }
+        Nodo p = prim;
+        int k = -1;
+        int kk = 0;
+        // Avanzar hasta la posición i
+        while (kk < k && p != null) {
+            p = p.prox;
+            kk++;
+        }
+        // Buscar la primera ocurrencia de x desde la posición i
+        while (p != null) {
+            if (p.elem == x) {
+                k = kk; // Actualizar la posición de la primera ocurrencia de x
+                break;
+            }
+            p = p.prox;
+            kk++;
+        }
+        return k;
+    }
+
     // 20.   L1.lastIndexOf(x) : Método que devuelve la posición de la última ocurrencia del elemento x.
     // Si x no se encuentra en la lista L1, el método devuelve –1.
     public int lastIndexOf(int x) {
@@ -365,7 +389,29 @@ public class ListaD {
     }
     // 21.   L1.lastIndexOf(x, i) : Método que devuelve la posición de la última ocurrencia del elemento x.
     // Si x no se encuentra en la lista L1, el método devuelve –1. La búsqueda se realiza desde la posición i.
-    //
+    public int lastIndexOf(int x, int i) {
+        if (prim == null || i < 0) {
+            return -1;
+        }
+        Nodo p = prim;
+        int k = -1;
+        int kk = 0;
+        // Avanzar hasta la posición i
+        while (kk < i && p != null) {
+            p = p.prox;
+            kk++;
+        }
+        // Buscar la última ocurrencia de x desde la posición i
+        while (p != null) {
+            if (p.elem == x) {
+                k = kk; // Actualizar la posición de la última ocurrencia de x
+            }
+            p = p.prox;
+            kk++;
+        }
+        return k;
+    }
+
     // 22.   L1.reemplazar(x, y) : Método que reemplaza todas las ocurrencias del elemento x por el elemento y en la lista L1.
     public void reemplazar (int x, int y){
         Nodo p = prim;
@@ -594,16 +640,55 @@ public class ListaD {
         return ap.prox;
     }
     // 4. L1.eliminarPrim(x) : Método que elimina el primer elemento x de la lista L1.
-
+    public void eliminarPrimX(int x){
+        Nodo p = prim;
+        while (p != null){
+            if (p.elem == x) {
+                eliminarNodo(p.ant, p);
+                return;
+            }
+            p = p.prox;
+        }
+    }
     // 5. L1.eliminarUlt(x) : Método que elimina el último elemento x de la lista L1.
-
+    public void eliminarUltX(int x) {
+        if (prim == null) {
+            return;
+        }
+        Nodo p = prim;
+        Nodo ap = null;
+        // Encontrar el último nodo y verificar si contiene el valor a eliminar
+        while (p.prox != null) {
+            if (p.prox.elem == x) {
+                ap = p;
+            }
+            p = p.prox;
+        }
+        // Si no se encontró el valor a eliminar, no hay nada que hacer
+        if (ap == null) {
+            return;
+        }
+        // Si el último nodo es el primer nodo
+        if (ap == prim) {
+            prim = prim.prox;
+            if (prim != null) {
+                prim.ant = null; // Actualizar el puntero del nodo anterior
+            }
+            return;
+        }
+        // Eliminar el último nodo que contiene el valor a eliminar
+        ap.prox = ap.prox.prox;
+        if (ap.prox != null) {
+            ap.prox.ant = ap; // Actualizar el puntero del nodo anterior al siguiente nodo
+        }
+    }
 
     // 6. L1.eliminarTodo( x ) : Método que elimina todos los elementos x de la lista L1.
     public void eliminarTodo(int x){
         Nodo p = prim, ap=null;
         while(p != null){
             if(p.elem == x){
-                ap.prox = eliminarNodo(ap, p);
+                p.prox = eliminarNodo(ap, p);
                 p = p.prox;
             }else {
                 ap =p;
@@ -681,14 +766,113 @@ public class ListaD {
         }
     }
     // 12.L1.eliminarUnicos() : Método que elimina los elementos que aparecen solo una vez en la lista L1.
-    //
+    public void eliminarUnicos() {
+        Nodo p = prim;
+        while (p != null) {
+            if (!esRepetido(p.elem)) {
+                eliminarNodo(p.ant,p);
+                p = prim;
+            } else {
+                p = p.prox;
+            }
+        }
+    }
+
+    private boolean esRepetido(int elem) {
+        Nodo p = prim;
+        int k = 0;
+        while (p != null) {
+            if (p.elem == elem) {
+                k++;
+            }
+            p = p.prox;
+        }
+        return k > 1;
+    }
     // 13 L1.eliminarTodo(L2) : Método que elimina todos los elementos de la lista L1, que aparecen en la lista L2.
-    //
+    public void eliminarTodo(ListaD L2) {
+        Nodo q = L2.prim;
+        while (q != null) {
+            Nodo p = prim;
+            while (p != null) {
+                if (p.elem == q.elem) {
+                    p = eliminarNodo(p.ant, p);
+                    break;
+                }
+                p = p.prox;
+            }
+            q = q.prox;
+        }
+    }
     // 14. L1.eliminarVeces(k) : Método que elimina los elementos que se repiten k-veces en la lista L1.
-    //
-    // 15. L1.eliminarAlternos() : Método que elimina los elementos de las posiciones alternas. (permanece, se elimina, permanece, se elimina, etc.)
-    //
+    public void eliminarVeces(int k){
+        Nodo p =prim;
+        while (p != null && p.prox != null){
+            if (frecuencia(p.elem) == k)
+                eliminarTodo(p.elem);
+            p = p.prox;
+        }
+    }
+    // 15. L1.eliminarAlternos() : Método que elimina los elementos de las posiciones alternas.(permanece, se elimina, permanece, se elimina, etc.)
+    public void eliminarAlternos() {
+        Nodo p = prim;
+        while (p != null && p.prox != null) {
+            Nodo q = p.prox.prox;
+            p.prox = q;
+            p = q;
+        }
+    }
     // 16. L1.rotarIzqDer( n ) : Método que hace rotar los elementos de la lista L1 n-veces de izquierda a derecha.
-    //
+    public void rotarIzqDer(int n) {
+        if (prim == null || n <= 0) {
+            return;
+        }
+        int k = 1;
+        Nodo q = prim;
+        while (q.prox != null) {
+            q = q.prox;
+            k++;
+        }
+        n = n % k;
+        if (n == 0) {
+            return;
+        }
+        Nodo p = prim;
+        for (int i = 1; i < k - n; i++) {
+            p = p.prox;
+        }
+        Nodo ap = p.prox;
+        ap.ant = null;
+        p.prox = null;
+        q.prox = prim;
+        prim.ant = q;
+        prim = ap;
+    }
     // 17. L1.rotarDerIzq( n ) : Método que hace rotar los elementos de la lista L1 n-veces de derecha a izquierda.
+    public void rotarDerIzq(int n) {
+        if (prim == null || n <= 0) {
+            return;
+        }
+        int k = 1;
+        Nodo q = prim;
+        while (q.prox != null) {
+            q = q.prox;
+            k++;
+        }
+        n = n % k;
+        if (n == 0) {
+            return;
+        }
+        Nodo p = prim;
+        for (int i = 1; i < k - n; i++) {
+            p = p.prox;
+        }
+        Nodo ap = p.prox;
+        ap.ant = null;
+        p.prox = null;
+        q.prox = prim;
+        prim.ant = q;
+        prim = ap;
+    }
+
 }

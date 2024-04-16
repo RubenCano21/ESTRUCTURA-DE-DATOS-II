@@ -9,15 +9,15 @@ public class TestListaD {
         ListaD L3 = new ListaD();
 
         L1.insertarUlt(1);
-        L1.insertarUlt(2);
+        L1.insertarUlt(1);
         L1.insertarUlt(5);
-        L1.insertarUlt(4);
+        L1.insertarUlt(1);
         L1.insertarUlt(7);
 
-//        L2.insertarUlt(9);
-//        L2.insertarUlt(8);
-//        L2.insertarUlt(7);
-//        L2.insertarUlt(2);
+        L2.insertarUlt(1);
+        L2.insertarUlt(8);
+        L2.insertarUlt(7);
+        L2.insertarUlt(2);
 //
 //        L3.insertarUlt(2);
 //        L3.insertarUlt(3);
@@ -25,7 +25,7 @@ public class TestListaD {
 //        L3.insertarUlt(7);
 
         System.out.println("L1->"+ L1);
-//        System.out.println("L2->"+ L2);
+        System.out.println("L2->"+ L2);
 //        System.out.println("L3->"+ L3);
 //        System.out.println("Diferentes: "+L1.diferentes());
 //        System.out.println("ElemMayor: " + L1.mayorElem());
@@ -72,7 +72,24 @@ public class TestListaD {
 //        System.out.println("EliminarIesimo(i, n): " + L1);
 //        L1.eliminarExtremos( 1);
 //        System.out.println("EliminarExtremos( n): " + L1);
-        L1.eliminarPares();
-        System.out.println("Eliminarpares(): " + L1);
+//        L1.eliminarPares();
+//        System.out.println("Eliminarpares(): " + L1);
+//        L1.eliminarUnicos();
+//        System.out.println("EliminarUnicos: " + L1);
+//        L1.eliminarTodo(L2);
+//        System.out.println("EliminarTodo(L2): " + L1);
+//        L1.eliminarVeces(2);
+//        System.out.println("EliminarVeces(k): " + L1);
+//        L1.eliminarAlternos();
+//        System.out.println("EliminarAlternos: " + L1);
+//        L1.rotarIzqDer(2);
+//        System.out.println("RotarIzqDer: " + L1);
+//        L1.rotarDerIzq(2);
+//        System.out.println("RotarDerIzq: " + L1);
+//        L1.eliminarPrimX(1);
+//        System.out.println("EliminarPrimX: " + L1);
+//        L1.eliminarUltX(1);
+//        System.out.println("EliminarUltX: " + L1);
+        System.out.println("lastIndexOf: " + L1.lastIndexOf(1,1));
     }
 }
