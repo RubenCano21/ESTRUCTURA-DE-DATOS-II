@@ -17,13 +17,13 @@ public class ListaD {
     // 1.   L1.toString() : Método que devuelve una cadena, que representa la secuencia de elementos de la lista L1.
     @Override
     public String toString(){
-        String s1 = "[";
+        StringBuilder s1 = new StringBuilder("[");
         Nodo p = prim;
         while (p != null){
-            s1 += p.elem + ", ";
+            s1.append(p.elem).append(", ");
             p = p.prox;
         }
-        s1 = s1.substring(0, s1.length() -2);
+        s1 = new StringBuilder(s1.substring(0, s1.length() - 2));
         return s1 + "]";
     }
     // 2.   L1.insertarPrim(x) : Método que inserta el elemento x, al final de la lista L1.
