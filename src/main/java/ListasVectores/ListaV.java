@@ -290,16 +290,13 @@ public class ListaV {
     // 11. L1.eliminarUlt( n ) : Método que elimina los n-últimos elementos de la lista L1.
     public void eliminarUlt(int n) {
         if (n <= 0) {
-            // No hay elementos para eliminar
             return;
         }
         if (n >= cantElem) {
             limpiarLista();
             return;
         }
-        // Disminuir el contador de elementos
         cantElem -= n;
-        // Limpiar los elementos que quedaron al final
         for (int i = cantElem + 1; i <= cantElem + n; i++) {
             this.v[i] = 0; // Si v es un array de primitivos
         }
@@ -532,5 +529,15 @@ public boolean diferentes() {
             }
         }
         return true;
+    }
+    public void imprimir(ListaV L2) {
+        for (int i = 1; i <= cantElem; i++) {
+            int elemento = v[i];
+            int frecuenciaL1 = frecuencia(elemento);
+            int frecuenciaL2 = L2.frecuencia(elemento);
+            if (frecuenciaL1 != frecuenciaL2) {
+
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ public class TestListaD {
         ListaD L2 = new ListaD();
         ListaD L3 = new ListaD();
 
-        L1.insertarUlt(1);
+        L1.insertarPrim(9);
         L1.insertarUlt(1);
         L1.insertarUlt(5);
         L1.insertarUlt(1);
